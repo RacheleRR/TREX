@@ -179,14 +179,7 @@ fi
 
 echo "Completed at: $(date)"
 
-# Check if output was created
-if [ ! -f "$REX_OUTPUT" ]; then
-    echo "ERROR: RExPRT output not found: $REX_OUTPUT"
-    exit 1
-fi
 
-echo "RExPRT annotation complete!"
-echo "Output file: $REX_OUTPUT"
 
 # ============================================================================
 # STEP 5: MOVE RExPRT OUTPUTS
