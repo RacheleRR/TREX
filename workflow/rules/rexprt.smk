@@ -2,7 +2,7 @@ rule rexprt:
     input:
         annotated = rules.annotate.output.tsv
     output:
-        tsv = config["results"]["rexprt"] + "/ehdn_DBSCAN_annotated_rex_RExPRTscores.txt"
+        tsv = config["results"]["rexprt"] + "/ehdn_DBSCAN_annotated_rex_input_TRsAnnotated_RExPRTscores.txt"
     params:
         liftover = config["program"]["liftover"],
         chain = config["resources"]["liftover_chain"],
