@@ -1,6 +1,6 @@
-# TREX   <img width="500" height="500" alt="generated-image" src="https://github.com/user-attachments/assets/80f75e28-da91-4f2b-b90e-6c2cedf85274" />
+<br>
 
-
+# TREX  <img align="right"  src="https://github.com/user-attachments/assets/80f75e28-da91-4f2b-b90e-6c2cedf85274" width="320" /> 
 
 
 
