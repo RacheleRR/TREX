@@ -1,15 +1,30 @@
-<br>
-
-# TREX  <img align="right"  src="https://github.com/user-attachments/assets/80f75e28-da91-4f2b-b90e-6c2cedf85274" width="320" /> 
-
-
-
-
-
-TREX is a Tandem Repeat Expansion Analysis Pipeline. This pipeline provides an end-to-end, reproducible framework for the genome-wide analysis of tandem repeat (TR) expansions from whole-genome sequencing data. It enables systematic detection, characterization, and biological interpretation of repeat expansions across multiple cohorts and phenotypic groups, with an emphasis on statistical rigor and downstream functional relevance.
+<table>
+  <tr>
+    <td valign="top" style="padding-right: 24px;">
+      <h1>TREX</h1>
+      <p>
+        TREX is a Tandem Repeat Expansion Analysis Pipeline. This pipeline provides an end-to-end, reproducible framework for the genome-wide analysis of tandem repeat (TR) expansions from whole-genome sequencing data.
+      </p>
+    </td>
+    <td valign="top">
+      <img src="https://github.com/user-attachments/assets/80f75e28-da91-4f2b-b90e-6c2cedf85274" width="320" />
+    </td>
+  </tr>
+</table>
         
 <img width="502" height="227" alt="Screenshot 2026-01-13 alle 18 16 28" src="https://github.com/user-attachments/assets/027ad199-35c7-4519-8be6-dbc6e99c1ea6" />
 
+
+
+<div>
+  <h1>TREX</h1>
+
+  <img align="right" src="https://github.com/user-attachments/assets/80f75e28-da91-4f2b-b90e-6c2cedf85274" width="320" style="margin-left: 24px;" />
+
+  <p>
+    TREX is a Tandem Repeat Expansion Analysis Pipeline. This pipeline provides an end-to-end, reproducible framework for the genome-wide analysis of tandem repeat (TR) expansions from whole-genome sequencing data. It enables systematic detection, characterization, and biological interpretation of repeat expansions across multiple cohorts and phenotypic groups, with an emphasis on statistical rigor and downstream functional relevance.
+  </p>
+</div>
 
 ## ✨ Key Capabilities
 - **Genome-wide TR expansion analysis** across single or multiple cohorts
