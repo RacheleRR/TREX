@@ -8,9 +8,9 @@ config/config.yaml
 This file controls input data, analysis behavior, group comparisons, and gene set enrichment.
 Most users will only need to modify a subset of parameters described below.
 
-For a the Complete Configuration Parameter Reference please click [here](06_Configuration_Parameter_Reference.md)
+For a the Complete Configuration Parameter Reference please click (06_Configuration_Parameter_Reference.md)
  
-
+[here]
 
 ## 1. Minimal Required Configuration
 ### 1.1 Input Manifest (Required)
