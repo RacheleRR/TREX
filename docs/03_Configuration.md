@@ -156,7 +156,7 @@ plot_options: "significant" # "significant", "all", "global_only"
 ---
 
 ### 2.7 Gene Set Burden
-If you decide that you want to  perform the anlysis with your custom geneset/s you will have to modify these parameters 
+If you decide that you want to  perform the analysis with your custom geneset/s you will have to modify these parameters 
 
 ```yaml
 geneset_list: ["brain", "brain_ntpm"]
