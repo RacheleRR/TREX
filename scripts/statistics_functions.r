@@ -387,8 +387,9 @@ perform_fisher_analysis <- function(
     if (return_format == "combined" && length(all_results) > 0) {
         combined_results <- do.call(rbind, all_results)
         
-        # Apply global FDR correction across ALL tests
-        # Adjust within each comparison, then report both
+        # Apply FDR correction from raw p-values only
+        # 1) within each pairwise comparison
+        # 2) globally across all comparisons
         combined_results <- combined_results %>%
         group_by(Comparison) %>%
         mutate(p_adj_within_comparison = p.adjust(p_value, method = fdr_method)) %>%
@@ -1070,7 +1071,7 @@ run_multinomial_analysis <- function(data, outcome, predictors, ref = NULL, adju
 
     if (is.null(model)) {
         cat("Model fitting failed — returning empty results\n")
-        return(list(model = NULLL, results = data.frame()))
+        return(list(model = NULL, results = data.frame()))
     }
 
     cat("Model fitted successfully\n")
@@ -1102,7 +1103,7 @@ run_multinomial_analysis <- function(data, outcome, predictors, ref = NULL, adju
             lower_OR = exp(estimate - 1.96 * SE),
             upper_OR = exp(estimate + 1.96 * SE)
         ) %>%
-        dplyr:rename(
+        dplyr::rename(
             comparison = contrast,
             estimate_log_odds = estimate,
             SE = SE,
