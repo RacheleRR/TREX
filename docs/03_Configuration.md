@@ -9,8 +9,9 @@ This file controls input data, analysis behavior, group comparisons, and gene se
 Most users will only need to modify a subset of parameters described below.
 
 For a the Complete Configuration Parameter Reference please click (06_Configuration_Parameter_Reference.md)
- 
-[here]
+[here](docs/06_Configuration_Parameter_Reference.md)
+
+
 
 ## 1. Minimal Required Configuration
 ### 1.1 Input Manifest (Required)
