@@ -73,7 +73,7 @@ For large cohorts (>50 samples), it is best to parallelized ExpansionHunterDenov
 
 ---
 
-### 2.1 Optional Manifest
+### 2.2 Optional Manifest
 ```
 manifest_mode: "filtered"   # or "complete"
 manifest_complete: "/path/to/manifest_complete.csv"
@@ -96,7 +96,7 @@ The `manifest_complete` file must contain **at least**:
 
 ---
 
-### 2.2 Privacy and Purity Filters
+### 2.3 Privacy and Purity Filters
 ```yaml
 analysis_privacy: "all"     # "all" or "private"
 analysis_purity: "mixed"   # "mixed" or "pure"
@@ -111,7 +111,7 @@ analysis_purity: "mixed"   # "mixed" or "pure"
 
 ---
 
-### 2.3 CpG Annotation
+### 2.4 CpG Annotation
 
 ```yaml
 include_cpg: TRUE
@@ -122,7 +122,7 @@ and regression models.
 
 ---
 
-### 2.4 Comparisons
+### 2.5 Comparisons
 
 ```yaml
 proximity_comparisons: "auto"  # or specify as "Group1-Group2,Group3-Group4"
@@ -143,7 +143,7 @@ extra_comparisons: "" # e.g., "Group1-Group2" or "Case-KnownSTRs"
 
 ---
 
-### 2.5 Burden Analysis Options
+### 2.6 Burden Analysis Options
 
 ```yaml
 exclude_samples_1: ""
@@ -155,7 +155,7 @@ plot_options: "significant" # "significant", "all", "global_only"
   
 ---
 
-### 2.6 Gene Set Burden
+### 2.7 Gene Set Burden
 If you decide that you want to  perform the anlysis with your custom geneset/s you will have to modify these parameters 
 
 ```yaml
@@ -178,7 +178,7 @@ Custom gene sets can be placed in a user-defined directory.
 
 ---
 
-### 2.7 Over-Representation Analysis (ORA)
+### 2.8 Over-Representation Analysis (ORA)
 
 ```yaml
 gmt_file: "path/to/file.gmt"
