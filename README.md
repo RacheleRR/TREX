@@ -51,8 +51,8 @@ Start here:
 **Clone repository**
 ```
 git lfs install
-git clone https://github.com/yourusername/ehdn-pipeline.git
-cd ehdn-pipeline
+git clone https://github.com/RacheleRR/TREX.git
+cd TREX
 ```
 **Run setup**
 ```
