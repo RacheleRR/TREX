@@ -1,3 +1,15 @@
+
+<div align="center">
+  <h1>🧬 TREX</h1>
+  <img src="https://github.com/user-attachments/assets/80f75e28-da91-4f2b-b90e-6c2cedf85274" width="600" />
+  <br/><br/>
+  <p align="center" style="max-width: 720px; font-size: 16px;">
+    TREX is a <strong>Tandem Repeat Expansion Analysis Pipeline</strong>. This pipeline provides an end-to-end, reproducible framework for the genome-wide analysis of tandem repeat (TR) expansions from whole-genome sequencing data. It enables systematic detection, characterization, and biological interpretation of repeat expansions across multiple cohorts and phenotypic groups, with an emphasis on statistical rigor and downstream functional relevance.
+  </p>
+</div>
+
+<img width="502" height="227" alt="Pipeline overview" src="https://github.com/user-attachments/assets/027ad199-35c7-4519-8be6-dbc6e99c1ea6" />
+
 <table>
   <tr>
     <td valign="top" style="padding-right: 24px;">
