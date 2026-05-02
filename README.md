@@ -34,7 +34,7 @@ Full documentation is available in the [Documents](docs) directory, including:
 - [Troubleshooting](docs/05_Troubleshooting.md)
 
 Start here:
-➡️ [](docs/00_Introduction.md)
+➡️ [here](docs/00_Introduction.md)
 
 
 # Basic Usage
@@ -68,6 +68,7 @@ If you use this pipeline, please cite:
 - **DBSCAN**: Ester et al. (1996) KDD-96
 - Fazal et al. (2020) - EHDN helper scripts
 - Trost et al. (2020) - BTlib utilities
+- Sarah Fazal et al. Genome Biol. 2024.- Rexprt
 
 ## License
 
@@ -75,7 +76,7 @@ MIT License - see LICENSE file
 
 ## Contact
 
-For questions or issues, please open a GitHub issue or contact [your email].
+For questions or issues, please open a GitHub issue or contact [rachelerebeccarubiu98@gmail.com].
 
 
 
