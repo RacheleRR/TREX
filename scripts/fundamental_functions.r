@@ -1927,7 +1927,7 @@ create_gene_list_summary <- function(df,
       
       # All unique samples
       all_sample_ids = paste(unique(unlist(strsplit(all_samples, "; "))), collapse = "; "),
-      num_samples = sum(sample_count),
+      num_samples = n_distinct(unlist(strsplit(all_sample_ids, "; "))),
       
       # All unique regions
       all_region_types = paste(sort(unique(region)), collapse = "; "),
