@@ -9,7 +9,7 @@ This pipeline is executed using Snakemake. You may run the full workflow or spec
 Perform a dry run to inspect which rules will be executed and to check that the DEG is healthy without launching any jobs:
 
 ```bash
-cd TRs-pipeline
+cd TREX
 snakemake -n --cores 12
 ```
 
