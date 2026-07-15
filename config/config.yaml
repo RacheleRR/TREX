@@ -1,5 +1,5 @@
 project:
-  name: TREs_pipeline
+  name: TREX
 
 input:
   manifest_raw: "/scratch/project_X/manifest.tsv"
