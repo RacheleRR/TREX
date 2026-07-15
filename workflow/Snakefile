@@ -7,7 +7,7 @@ include: "rules/annotate.smk"
 include: "rules/rexprt.smk"
 include: "rules/analysis.smk"
 
-
 rule all:
     input:
-        f"results/analysis/reports/{config['analysis_privacy']}_{config['analysis_purity']}/done"
+        f"results/analysis/reports/{config['analysis_privacy']}_{config['analysis_purity']}/done",
+        f"results/analysis/ORA/{config['analysis_privacy']}_{config['analysis_purity']}/done"
