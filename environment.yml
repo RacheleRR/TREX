@@ -1,0 +1,65 @@
+name: trex
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+
+dependencies:
+  # Core
+  - python=3.10
+  - r-base=4.1.*
+  # Verified working on Snakemake >=8; older 7.x point releases have been
+  # observed to mis-handle f-string-derived wildcarded output paths
+  # (see workflow/rules/analysis.smk history) — do not pin below 8.
+  - snakemake-minimal>=8
+  - parallel          # GNU parallel, used by scripts/1_run_ehdn.sh
+  - git-lfs
+
+  # Python
+  - pandas
+
+  # R — CRAN
+  - r-dplyr
+  - r-tidyr
+  - r-tibble
+  - r-purrr
+  - r-stringr
+  - r-readr
+  - r-ggplot2
+  - r-ggrepel
+  - r-ggforce
+  - r-cowplot
+  - r-gridextra
+  - r-scales
+  - r-rcolorbrewer
+  - r-data.table
+  - r-dbscan
+  - r-dosnow
+  - r-broom
+  - r-emmeans
+  - r-nnet
+  - r-ordinal
+  - r-openxlsx
+  - r-htmlwidgets
+  - r-gprofiler2
+  - r-qqconf
+  - r-qqplotr
+
+  # R — Bioconductor
+  - bioconductor-genomicranges
+  - bioconductor-biostrings
+  - bioconductor-bsgenome.hsapiens.ucsc.hg38
+  - bioconductor-phastcons100way.ucsc.hg38
+  - bioconductor-clusterprofiler
+  - bioconductor-org.hs.eg.db
+  - bioconductor-dose
+  - bioconductor-enrichplot
+  - bioconductor-rcy3
+
+# Not conda-installable / handled separately by setup/*.sh — listed here for
+# visibility only, do not add to `dependencies:` above:
+#   - ExpansionHunterDenovo v0.9.0  (setup/install_tools.sh)
+#   - RExPRT                        (setup/install_tools.sh, git clone)
+#   - liftOver                      (setup/install_tools.sh)
+#   - ANNOVAR                       (manual, licensed download — docs/02_Installation.md)
+#   - Cytoscape >=3.9               (optional, desktop app — manual install)

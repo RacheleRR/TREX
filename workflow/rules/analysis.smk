@@ -224,7 +224,7 @@ rule ora_analysis:
         modified = rules.prepare_data.output.modified,
         manifest = rules.prepare_data.output.manifest
     output:
-        done = f"{ANALYSIS}/ORA/{{privacy}}_{{purity}}/done"
+        done = ANALYSIS + "/ORA/{privacy}_{purity}/done"
     params:
         privacy = config["analysis_privacy"],
         purity = config["analysis_purity"],
@@ -232,7 +232,7 @@ rule ora_analysis:
         min_term_size = config.get("min_term_size", 2),
         max_term_size = config.get("max_term_size", 2500),
         data_dir = f"{ANALYSIS}/data_prepare",
-        outdir = directory(f"{ANALYSIS}/ORA/{{privacy}}_{{purity}}"),
+        outdir = directory(ANALYSIS + "/ORA/{privacy}_{purity}"),
         gmt_file =config["gmt_file"],
         ora_sources = ",".join(config.get("ora_sources", ["GO:BP", "GO:MF", "GO:CC", "KEGG", "REAC"])) 
     log:

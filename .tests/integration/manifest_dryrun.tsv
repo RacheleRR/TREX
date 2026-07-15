@@ -1,0 +1,5 @@
+sample_id	Status	BAM_path
+toy_sample_001	Control	/tmp/toy_sample_001.bam
+toy_sample_002	Control	/tmp/toy_sample_002.bam
+toy_sample_003	Case	/tmp/toy_sample_003.bam
+toy_sample_004	Case	/tmp/toy_sample_004.bam

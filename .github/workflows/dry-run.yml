@@ -1,0 +1,56 @@
+name: Pipeline dry run
+
+# Sanity-checks that the Snakemake DAG still resolves end-to-end on every
+# push/PR. This does NOT execute any rule (no real data, no R/Python
+# packages required) — it only verifies that the workflow graph builds and
+# that every rule we expect to run is actually part of the plan. It exists
+# specifically to catch rules that quietly fall out of `rule all` (as
+# happened with `ora_analysis`) before they reach review.
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  dry-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install Snakemake
+        run: pip install "snakemake>=8" pyyaml
+
+      - name: Build a config pointing at the toy manifest
+        run: |
+          python3 -c "
+          import yaml
+          with open('config/config.yaml') as f:
+              cfg = yaml.safe_load(f)
+          cfg['input']['manifest_raw'] = '.tests/integration/manifest_dryrun.tsv'
+          with open('/tmp/dryrun_config.yaml', 'w') as f:
+              yaml.dump(cfg, f)
+          "
+
+      - name: Dry run the full pipeline
+        run: |
+          snakemake -n --cores 4 \
+            -s workflow/Snakefile \
+            --configfile /tmp/dryrun_config.yaml \
+            > /tmp/dryrun_output.txt
+          cat /tmp/dryrun_output.txt
+
+      - name: Guard against ORA (or any rule) silently dropping out of rule all
+        run: |
+          for rule in ora_analysis correlation proximity genomic_burden regression geneset_burden generate_report; do
+            if ! grep -q "^rule ${rule}:" /tmp/dryrun_output.txt; then
+              echo "❌ '${rule}' is not part of the dry-run plan — check rule all / generate_report inputs"
+              exit 1
+            fi
+          done
+          echo "✅ all expected analysis rules are part of the plan"

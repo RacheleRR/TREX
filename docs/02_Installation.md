@@ -5,7 +5,7 @@
 Before installing the pipeline, ensure the following software is available:
 
 - Python 3.8 or higher
-- Snakemake (>= 7.0)
+- Snakemake (>= 8.0) — versions in the 7.x line have been observed to mis-handle some of this pipeline's wildcarded output paths; use 8.0+ (see `environment.yml`)
 - R studio (≥4.1)
 - git-lfs (necessary to download the bigger files)
 - GNU parallel (necessary to run samples in parallel in ehdn) 
@@ -18,7 +18,11 @@ git lfs install
 git clone https://github.com/RacheleRR/TREX.git
 cd TREX
 
-# 2. Run automated setup (downloads tools, resources, helper scripts)
+# 2. (Recommended) Create the pinned conda environment
+conda env create -f environment.yml
+conda activate trex
+
+# 3. Run automated setup (downloads tools, resources, helper scripts)
 bash setup/setup.sh
 
 ```
