@@ -185,11 +185,13 @@ gmt_file: "path/to/file.gmt"
 gem_per_group: TRUE
 min_term_size: 2
 max_term_size: 2500
+ora_sources: ["GO:BP", "GO:MF", "GO:CC", "KEGG", "REAC"]
 ```
 
 - `gmt_file` must follow standard GMT format
 - `gem_per_group` controls whether GEMs are placed in one general folder or  a folder will be generated per group 
 - `Term size limits` control ORA filtering
+- `ora_sources`
 
 ---
 
