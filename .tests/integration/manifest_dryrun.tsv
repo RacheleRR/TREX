@@ -1,5 +1,7 @@
 sample_id	Status	BAM_path
-toy_sample_001	Control	/tmp/toy_sample_001.bam
-toy_sample_002	Control	/tmp/toy_sample_002.bam
-toy_sample_003	Case	/tmp/toy_sample_003.bam
-toy_sample_004	Case	/tmp/toy_sample_004.bam
+NA12878	Case	.tests/integration/1000g_htt/NA12878_htt.bam
+NA12891	Case	.tests/integration/1000g_htt/NA12891_htt.bam
+NA12892	Case	.tests/integration/1000g_htt/NA12892_htt.bam
+HG00096	Control	.tests/integration/1000g_htt/HG00096_htt.bam
+HG00097	Control	.tests/integration/1000g_htt/HG00097_htt.bam
+HG00099	Control	.tests/integration/1000g_htt/HG00099_htt.bam
