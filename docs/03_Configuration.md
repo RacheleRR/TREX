@@ -191,7 +191,7 @@ ora_sources: ["GO:BP", "GO:MF", "GO:CC", "KEGG", "REAC"]
 - `gmt_file` must follow standard GMT format
 - `gem_per_group` controls whether GEMs are placed in one general folder or  a folder will be generated per group 
 - `Term size limits` control ORA filtering
-- `ora_sources`
+- `ora_sources` controls which g:Profiler databases are queried for over-representation analysis. Defaults to GO (biological process, molecular function, cellular component) plus KEGG and Reactome. Other valid g:Profiler source codes (e.g. `TF`, `MIRNA`, `CORUM`, `HP`, `WP`) can be added or substituted.
 
 ---
 
