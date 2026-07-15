@@ -15,8 +15,8 @@ Before installing the pipeline, ensure the following software is available:
 ```bash
 # 1. Clone repository
 git lfs install
-git clone https://github.com/yourusername/ehdn-pipeline.git
-cd ehdn-pipeline
+git clone [https://github.com/yourusername/ehdn-pipeline.git](https://github.com/RacheleRR/TREX.git)
+cd TREX
 
 # 2. Run automated setup (downloads tools, resources, helper scripts)
 bash setup/setup.sh
