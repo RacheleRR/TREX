@@ -69,4 +69,4 @@ gem_per_group: TRUE # TRUE = separate folder per group, FALSE = all GEMs in one 
 min_term_size: 2
 max_term_size: 2500
 gmt_file: "resources/gprofiler_full_hsapiens.name.gmt"  #"path/to/filegmt"
-
+ora_sources: ["GO:BP", "GO:MF", "GO:CC", "KEGG", "REAC"]  # g:Profiler source codes to test; other valid options: TF, MIRNA, CORUM, HP, WP
