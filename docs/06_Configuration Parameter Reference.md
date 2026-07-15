@@ -110,5 +110,5 @@ This section documents **all available parameters** in `config/config.yaml`.
 | `gem_per_group` | boolean | no | Separate GEMs per group |
 | `min_term_size` | int | no | Minimum ORA term size |
 | `max_term_size` | int | no | Maximum ORA term size |
-
+| `ora_sources` | list | no | g:Profiler source codes to query (default: GO:BP, GO:MF, GO:CC, KEGG, REAC) |
 ---
