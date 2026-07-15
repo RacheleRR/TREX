@@ -12,7 +12,9 @@
 #   - args[6]: Minimum term size (genes per term)
 #   - args[7]: Maximum term size (genes per term)
 #   - args[8]: GMT file path for Cytoscape networks
-#
+#   - args[9]: (optional) Comma-separated g:Profiler source codes for ORA,
+#              e.g. "GO:BP,GO:MF,GO:CC,KEGG,REAC". Defaults to GO+KEGG+Reactome if not supplied.
+#              
 # OUTPUT:
 #   - gProfiler2 results: TSV tables with enrichment statistics
 #   - Interactive HTML and static PNG plots
@@ -42,8 +44,8 @@ print(args)
 cat("\n")
 
 if (length(args) < 8) {
-  stop("Expected 8 arguments: input_dir output_dir privacy purity gem_per_group min_term_size max_term_size gmt_file")
-}
+  stop("Expected at least 8 arguments: input_dir output_dir privacy purity gem_per_group min_term_size max_term_size gmt_file [ora_sources]")
+ }
 
 input_dir  <- args[1]
 output_dir <- args[2]
@@ -53,6 +55,16 @@ gem_per_group <- tolower(args[5]) == "true"
 min_term_size  <- as.integer(args[6])
 max_term_size  <- as.integer(args[7])
 gmt_file <- args[8]
+
+# args[9] is optional: comma-separated g:Profiler source codes.
+# Falls back to run_enrichment()'s own default (GO + KEGG + Reactome) if absent/blank.
+if (length(args) >= 9 && nzchar(args[9])) {
+  ora_sources <- strsplit(args[9], ",")[[1]]
+} else {
+ ora_sources <- c("GO:BP", "GO:MF", "GO:CC", "KEGG", "REAC")
+}
+cat("ORA sources:", paste(ora_sources, collapse = ", "), "\n")
+
 dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
 
 # ============================================
@@ -123,11 +135,10 @@ if(gem_per_group) {
       next
     }
     
-    res <- run_enrichment(group_genes)
-    if(is.null(res) || nrow(res$result) == 0) {
-      message("No enrichment results for group ", group)
-      next
-    }
+    res <- run_enrichment(group_genes, sources = ora_sources)
+     if(is.null(res) || nrow(res$result) == 0) {
+       message("No enrichment results for group ", group)
+       next
     
     res$result <- res$result %>%
       filter(term_size >= min_term_size & term_size <= max_term_size)
@@ -192,7 +203,7 @@ if(gem_per_group) {
   })
   names(multi_query) <- group_names
   
-  res <- run_enrichment(multi_query)
+  res <- run_enrichment(multi_query, sources = ora_sources)
   
   if(!is.null(res) && nrow(res$result) > 0) {
     res$result <- res$result %>%
