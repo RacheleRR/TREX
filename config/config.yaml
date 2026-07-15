@@ -17,7 +17,7 @@ resources:
   liftover_chain: "resources/hg38ToHg19.over.chain.gz"
   genome_bins: "resources/genome.bin.1k.tsv"
   phylop: "resources/subset_phylop_1kb_bins.tsv"
-  fragile_sites: "resources/fagile_sites_hg38.tsv"
+  fragile_sites: "resources/fragile_sites_hg38.tsv"
   known_repeats: "resources/UCSC_simple_repeats_hg38.period_lte20.txt"
   refflat: "resources/refFlat.txt"
   introns: "resources/hg38_intron_refFlat.txt"
