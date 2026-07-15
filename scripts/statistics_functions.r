@@ -1156,11 +1156,19 @@ run_multinomial_analysis <- function(data, outcome, predictors, ref = NULL, adju
 }
 
 
-# Enhanced enrichment function
-run_enrichment <- function(genes) {
-  cat("\n=== Gene set enrichment analysis ===\n")
-  cat("Input genes:", length(genes), "\n")
 
+
+                               
+# Enhanced enrichment function
+# `sources` accepts any valid g:Profiler source codes, e.g.:
+#   GO:BP, GO:MF, GO:CC (Gene Ontology), KEGG, REAC (Reactome),
+#   TF, MIRNA, CORUM, HP, WP. Defaults to GO + KEGG + Reactome.
+
+run_enrichment <- function(genes, sources = c("GO:BP", "GO:MF", "GO:CC", "KEGG", "REAC")) {
+   cat("\n=== Gene set enrichment analysis ===\n")
+   cat("Input genes:", length(genes), "\n")
+   cat("Sources:", paste(sources, collapse = ", "), "\n")
+  
   if (length(genes) < 5) {
     message("Skipping enrichment: too few genes")
     return(NULL)
@@ -1171,7 +1179,7 @@ run_enrichment <- function(genes) {
     gost(
       query = genes,
       organism = "hsapiens",
-      sources = c("GO:BP", "GO:MF", "GO:CC"),
+      sources = sources,
       correction_method = "fdr",
       significant = TRUE,
       evcodes = TRUE,
