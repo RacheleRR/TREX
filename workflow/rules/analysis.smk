@@ -239,7 +239,7 @@ rule ora_analysis:
     shell:
         """
         mkdir -p {params.outdir}
-        Rscript scripts/13_ORA_multiquerry.r \
+        Rscript scripts/13_ORA_multiquery.r \
             {params.data_dir} \
             {params.outdir} \
             {params.privacy} \
