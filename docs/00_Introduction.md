@@ -1,8 +1,8 @@
-### A guide to TREAP
+### A guide to TREX
 
-TREAP is a comprehensive Snakemake-based pipeline for detecting and analyzing tandem repeat expansions from whole-genome sequencing data using ExpansionHunterDenovo (EHDN).
+TREX is a comprehensive Snakemake-based pipeline for detecting and analyzing tandem repeat expansions from whole-genome sequencing data using ExpansionHunterDenovo (EHDN).
 
-To use TREAP you need to (1) download the latest release or build the pipeline from source, (2) have a collection of BAM files and a manifest file. 
+To use TREX you need to (1) download the latest release or build the pipeline from source, (2) have a collection of BAM files and a manifest file. 
 
 The following sections will help you to get started.
 
