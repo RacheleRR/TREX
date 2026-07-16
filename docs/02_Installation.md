@@ -33,7 +33,7 @@ bash setup/setup.sh
 
 ```bash
 tar xvfz annovar.latest.tar.gz 
-mv annovar helper/annovar
+mv annovar TREX/helper/annovar
 
 ```
 
@@ -45,7 +45,7 @@ If you plan to run the network analysis:
 5. Move the GMT file into the resources/ folder:
 
 ```bash
-mv combined_names.gmt  resources/
+mv combined_names.gmt  TREX/resources/
 
 ```
 
